@@ -116,6 +116,12 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
             width: '50%',
           },
         },
+        {
+          name: 'icon',
+          label: 'Icon',
+          type: 'upload',
+          relationTo: 'media',
+        },
       ],
     })
   } else {
@@ -148,3 +154,5 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
 }
 
 export default link
+
+// cont @ 1:00:37
