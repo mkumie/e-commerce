@@ -6,7 +6,6 @@ import { Props, RenderParamsComponent } from './Component'
 // To fix this, we wrap the component in a `Suspense` component
 // See https://nextjs.org/docs/messages/deopted-into-client-rendering for more info
 
-// eslint-disable-next-line no-undef
 export const RenderParams: React.FC<Props> = props => {
   return (
     <Suspense fallback={null}>

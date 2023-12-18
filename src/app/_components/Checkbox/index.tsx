@@ -6,7 +6,6 @@ interface CheckboxProps {
   label: string
   value: string
   isSelected: boolean
-  // eslint-disable-next-line no-unused-vars
   onClickHandler: (value: string) => void
 }
 

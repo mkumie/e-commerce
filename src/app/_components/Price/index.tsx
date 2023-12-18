@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react'
 
 import { Product } from '../../../payload/payload-types'
 
-// import { AddToCartButton } from '../AddToCartButton'
-// import { RemoveFromCartButton } from '../RemoveFromCartButton'
 import classes from './index.module.scss'
 
 export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boolean): string => {
@@ -44,7 +42,7 @@ export const Price: React.FC<{
   quantity?: number
   button?: 'addToCart' | 'removeFromCart' | false
 }> = props => {
-  const { product: { priceJSON } = {}, quantity } = props
+  const { product, product: { priceJSON } = {}, button = 'addToCart', quantity } = props
 
   const [price, setPrice] = useState<{
     actualPrice: string
@@ -66,15 +64,8 @@ export const Price: React.FC<{
       {typeof price?.actualPrice !== 'undefined' && price?.withQuantity !== '' && (
         <div className={classes.price}>
           <p>{price?.withQuantity}</p>
-          {/* {quantity > 1 && (
-            <small className={classes.priceBreakdown}>{`${price.actualPrice} x ${quantity}`}</small>
-          )} */}
         </div>
       )}
-      {/* {button && button === 'addToCart' && (
-        <AddToCartButton product={product} appearance="default" />
-      )} */}
-      {/* {button && button === 'removeFromCart' && <RemoveFromCartButton product={product} />} */}
     </div>
   )
 }

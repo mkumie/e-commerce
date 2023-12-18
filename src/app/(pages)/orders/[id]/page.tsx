@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { Order as Orders } from '../../../../payload/payload-types'
+import { Order } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
 import { Gutter } from '../../../_components/Gutter'
 import { HR } from '../../../_components/HR'
@@ -22,7 +22,7 @@ export default async function Order({ params: { id } }) {
     )}&redirect=${encodeURIComponent(`/order/${id}`)}`,
   })
 
-  let order: Orders | null = null
+  let order: Order | null = null
 
   try {
     order = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/orders/${id}`, {

@@ -22,6 +22,7 @@ const Filters = ({ categories }: { categories: Category[] }) => {
       setCategoryFilters([...categoryFilters, categoryId])
     }
   }
+
   const handleSort = (value: string) => setSort(value)
 
   return (
@@ -43,10 +44,8 @@ const Filters = ({ categories }: { categories: Category[] }) => {
             )
           })}
         </div>
-
         <HR className={classes.hr} />
         <h6 className={classes.title}>Sort By</h6>
-
         <div className={classes.categories}>
           <RadioButton
             label="Latest"

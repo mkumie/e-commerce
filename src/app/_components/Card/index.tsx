@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
@@ -43,16 +43,16 @@ export const Card: React.FC<{
   doc?: Product
 }> = props => {
   const {
-    // showCategories,
+    showCategories,
     title: titleFromProps,
     doc,
-    doc: { slug, title, meta, priceJSON } = {},
+    doc: { slug, title, categories, meta, priceJSON } = {},
     className,
   } = props
 
   const { description, image: metaImage } = meta || {}
 
-  // const hasCategories = categories && Array.isArray(categories) && categories.length > 0
+  const hasCategories = categories && Array.isArray(categories) && categories.length > 0
   const titleToUse = titleFromProps || title
   const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
   const href = `/products/${slug}`
@@ -74,14 +74,9 @@ export const Card: React.FC<{
           <Media imgClassName={classes.image} resource={metaImage} fill />
         )}
       </div>
+
       <div className={classes.content}>
-        {titleToUse && (
-          <h4 className={classes.title}>
-            {/* <Link href={href} className={classes.titleLink}> */}
-            {titleToUse}
-            {/* </Link> */}
-          </h4>
-        )}
+        {titleToUse && <h4 className={classes.title}>{titleToUse}</h4>}
         {description && (
           <div className={classes.body}>
             {description && <p className={classes.description}>{sanitizedDescription}</p>}

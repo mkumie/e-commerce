@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldValues, UseFormRegister } from 'react-hook-form'
+import { FieldValues, UseFormRegister, Validate } from 'react-hook-form'
 
 import classes from './index.module.scss'
 
@@ -10,7 +10,6 @@ type Props = {
   required?: boolean
   error: any
   type?: 'text' | 'number' | 'password' | 'email'
-  // eslint-disable-next-line no-unused-vars
   validate?: (value: string) => boolean | string
   disabled?: boolean
 }

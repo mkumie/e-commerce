@@ -46,7 +46,6 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
       <div className={classes.itemDetails}>
         <div className={classes.titleWrapper}>
           <h6>{title}</h6>
-
           <Price product={product} button={false} />
         </div>
 

@@ -9,7 +9,6 @@ export const generateMeta = async (args: { doc: Page | Product }): Promise<Metad
   const ogImage =
     typeof doc?.meta?.image === 'object' &&
     doc?.meta?.image !== null &&
-    // eslint-disable-next-line no-unsafe-optional-chaining
     'url' in doc?.meta?.image &&
     `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.meta.image.url}`
 
