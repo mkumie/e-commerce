@@ -5,11 +5,11 @@ import Link from 'next/link'
 
 import { Page, Settings } from '../../../../payload/payload-types'
 import { Button } from '../../../_components/Button'
-import { HR } from '../../../_components/HR'
+// import { HR } from '../../../_components/HR'
 import { LoadingShimmer } from '../../../_components/LoadingShimmer'
-import { Media } from '../../../_components/Media'
-import { Price } from '../../../_components/Price'
-import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
+// import { Media } from '../../../_components/Media'
+// import { Price } from '../../../_components/Price'
+// import { RemoveFromCartButton } from '../../../_components/RemoveFromCartButton'
 import { useAuth } from '../../../_providers/Auth'
 import { useCart } from '../../../_providers/Cart'
 import CartItem from '../CartItem'
@@ -69,15 +69,13 @@ export const CartPage: React.FC<{
                 </div>
                 {/* CART ITEM LIST */}
                 <ul className={classes.itemsList}>
-                  {cart?.items?.map((item, index) => {
+                  {cart?.items?.map(item => {
                     if (typeof item.product === 'object') {
                       const {
                         quantity,
                         product,
-                        product: { id, title, meta, stripeProductID },
+                        product: { title, meta },
                       } = item
-
-                      const isLast = index === (cart?.items?.length || 0) - 1
 
                       const metaImage = meta?.image
 

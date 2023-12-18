@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import escapeHTML from 'escape-html'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { Text } from 'slate'
 
 import { Label } from '../Label'

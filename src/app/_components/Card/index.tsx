@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { Product } from '../../../payload/payload-types'
@@ -43,16 +43,14 @@ export const Card: React.FC<{
   doc?: Product
 }> = props => {
   const {
-    showCategories,
     title: titleFromProps,
     doc,
-    doc: { slug, title, categories, meta, priceJSON } = {},
+    doc: { slug, title, meta, priceJSON } = {},
     className,
   } = props
 
   const { description, image: metaImage } = meta || {}
 
-  const hasCategories = categories && Array.isArray(categories) && categories.length > 0
   const titleToUse = titleFromProps || title
   const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
   const href = `/products/${slug}`
