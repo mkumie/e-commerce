@@ -14,7 +14,7 @@ const initialContext: ThemeContextType = {
 const ThemeContext = createContext(initialContext)
 
 export const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme | undefined>(
+  const [, setThemeState] = useState<Theme | undefined>(
     canUseDOM ? (document.documentElement.getAttribute('data-theme') as Theme) : undefined,
   )
 
@@ -41,6 +41,7 @@ export const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ childr
       const implicitPreference = getImplicitPreference()
 
       if (implicitPreference) {
+        // eslint-disable-next-line no-unused-vars
         themeToSet = implicitPreference
       }
     }

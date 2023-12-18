@@ -19,6 +19,7 @@ export const appearanceOptions = {
 
 export type LinkAppearances = 'primary' | 'secondary' | 'default'
 
+// eslint-disable-next-line no-unused-vars
 type LinkType = (options?: {
   appearances?: LinkAppearances[] | false
   disableLabel?: boolean
@@ -154,5 +155,3 @@ const link: LinkType = ({ appearances, disableLabel = false, overrides = {} } = 
 }
 
 export default link
-
-// cont @ 1:00:37

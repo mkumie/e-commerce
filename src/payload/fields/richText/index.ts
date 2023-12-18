@@ -12,7 +12,9 @@ import elements from './elements'
 import leaves from './leaves'
 
 type RichText = (
+  // eslint-disable-next-line no-unused-vars
   overrides?: Partial<RichTextField> & { admin?: AdapterArguments['admin'] },
+  // eslint-disable-next-line no-unused-vars
   additions?: {
     elements?: RichTextElement[]
     leaves?: RichTextLeaf[]

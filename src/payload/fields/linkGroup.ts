@@ -5,6 +5,7 @@ import deepMerge from '../utilities/deepMerge'
 import type { LinkAppearances } from './link'
 import link from './link'
 
+// eslint-disable-next-line no-unused-vars
 type LinkGroupType = (options?: {
   overrides?: Partial<ArrayField>
   appearances?: LinkAppearances[] | false

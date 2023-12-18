@@ -3,8 +3,8 @@ import React from 'react'
 import { Product } from '../../../payload/payload-types'
 import { Card } from '../../_components/Card'
 import { Gutter } from '../../_components/Gutter'
-import RichText from '../../_components/RichText'
 
+// import RichText from '../../_components/RichText'
 import classes from './index.module.scss'
 
 export type RelatedProductsProps = {

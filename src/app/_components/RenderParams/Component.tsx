@@ -11,9 +11,11 @@ export type Props = {
   params?: string[]
   message?: string
   className?: string
+  // eslint-disable-next-line no-unused-vars
   onParams?: (paramValues: ((string | null | undefined) | string[])[]) => void
 }
 
+// eslint-disable-next-line no-undef
 export const RenderParamsComponent: React.FC<Props> = ({
   params = ['error', 'warning', 'success', 'message'],
   className,

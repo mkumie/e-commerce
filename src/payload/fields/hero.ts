@@ -1,10 +1,10 @@
 import type { Field } from 'payload/types'
 
+// import { CustomHero } from '../../app/_heros/CustomHero'
 import linkGroup from './linkGroup'
 import richText from './richText'
 import label from './richText/label'
 import largeBody from './richText/largeBody'
-import { CustomHero } from '../../app/_heros/CustomHero'
 
 export const hero: Field = {
   name: 'hero',

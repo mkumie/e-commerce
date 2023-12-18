@@ -26,6 +26,7 @@ export const CheckoutForm: React.FC<{}> = () => {
       setIsLoading(true)
 
       try {
+        // eslint-disable-next-line no-unsafe-optional-chaining
         const { error: stripeError, paymentIntent } = await stripe?.confirmPayment({
           elements: elements!,
           redirect: 'if_required',
